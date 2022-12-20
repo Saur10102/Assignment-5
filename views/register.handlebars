@@ -1,0 +1,204 @@
+{{!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> header}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style1.css">
+    <style>
+        label {
+            color: white;
+        }
+
+        .submit {
+            margin-top: 0px;
+        }
+    </style>
+</head>
+
+<body class="loginbody">
+    {{#if errMsg}}
+    <div class="alert alert-danger">
+        <p>{{errMsg}}</p>
+    </div>
+    {{/if}}
+    {{#if succMsg}}
+    <div class="alert alert-success">
+        <p>{{succMsg}}</p>
+    </div>
+    {{/if}}
+
+    <form method="post" class="form" action="/user/postRegistrationData" enctype="multipart/form-data">
+        <div class="title">Welcome, Buddy</div>
+        <div class="subtitle">Let's create your account!</div>
+        <div class="input-container ic2">
+            <label>Email:</label>
+            <input type="email" name="email" class="input">
+            {{#if emailerr}}
+            <p class="alert alert-danger">{{emailerr}}</p>
+            {{/if}}
+        </div>
+        <div class="input-container ic2">
+            <label>Full Name:</label>
+            <input type="text" class="input" name="name">
+            {{#if nameerr}}
+            <p class="alert alert-danger">{{nameerr}}</p>
+            {{/if}}
+        </div>
+
+        <div class="input-container ic2">
+            <label>Password:</label>
+            <input type="password" name="password" class="input">
+            {{#if passworderr}}
+            <p class="alert alert-danger">{{passworderr}}</p>
+            {{/if}}
+        </div>
+        <div class="input-container ic2">
+            <label>Image :</label>
+            <input type="file" name="image" class="input">
+        </div>
+
+        <input type="hidden" name="status" value="0" class="input">
+
+        <div class="input-container ic2">
+            <span class="clicks"><a href="./forget">Forget your password</a></span>
+            <span class="clicks" style="margin-left: 90px;"><a href="./login">Already a user ?</a></span>
+        </div>
+        <input type="submit" class="submit">
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>  --}}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+</head>
+
+<body>
+    {{>header}}
+     {{#if errMsg}}
+    <div class="alert alert-danger">
+        <p>{{errMsg}}</p>
+    </div>
+    {{/if}}
+    {{#if succMsg}}
+    <div class="alert alert-success mb-0" style="height: 50px;text-align:center">
+        {{succMsg}}
+    </div>
+    {{else if errMsg}}
+    <div class="alert alert-danger mb-0" style="height: 50px;text-align:center">
+        {{errMsg}}
+    </div>
+    {{/if}}
+  
+    <section class="vh-80" style="background-color: #eee;">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-2">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-4 mx-1 mx-md-4 mt-4">Register</p>
+
+                                    <form method="post" class="form" action="/user/postRegistrationData"
+                                        enctype="multipart/form-data">
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="form3Example1c">Your
+                                                    Name</label>
+                                                <input type="text" id="form3Example1c" class="form-control"
+                                                    name="name" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="form3Example3c">Your
+                                                    Email</label>
+                                                <input type="email" id="form3Example3c" class="form-control"
+                                                    name="email" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="form3Example4c">Password</label>
+                                                <input type="password" id="form3Example4c" class="form-control"
+                                                    name="password" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="form3Example4cd">Upload
+                                                    an Image</label>
+                                                <input type="file" id="form3Example4cd" class="form-control"
+                                                    name="image" />
+
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="status" value="0" class="input" />
+
+                                        <div class="form-check d-flex justify-content-center mb-5">
+                                            <input class="form-check-input me-2" type="checkbox" value=""
+                                                id="form2Example3c" />
+                                            <label class="form-check-label" for="form2Example3">
+                                                I agree all statements in
+                                                <a href="#!">Terms of service</a>
+                                            </label>
+                                        </div>
+
+                                        <div class="d-flex justify-content-center mx-4 mb-1 mb-lg-2">
+                                            <input type="submit" class="btn btn-primary btn-lg"></input>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                                        class="img-fluid" alt="Sample image" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+
+</body>
+{{>footer}}
+
+</html>
