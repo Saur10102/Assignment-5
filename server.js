@@ -3,7 +3,7 @@ const exphbs=require('express-handlebars');
 const app = express();
 
 //
-mongoose.connect("mongodb+srv://Saurabhkute56:saurabh@cluster0.ltz0e7p.mongodb.net/test");
+
 
 //server
 require('dotenv').config()
